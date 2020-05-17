@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">galacticlipboard</string>
+    <string name="welcome_message">Bienvenue à GalactiClipboard!</string>
+    <string name="login_button">Tenter l\'Accès</string>
+    <string name="password_box_text">entrez ici toutes vos données confidentielles.</string>
+</resources>
