@@ -23,7 +23,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Socket socket;
 
-    private static String SERVER_ADDRESS = "www.llguy.fun";
+    // 127.0.0.1 refers to the emulator itself! Need to use 10.0.2.2 to refer to host computer
+    private static String SERVER_ADDRESS = "10.0.2.2";
     private static int SERVER_PORT = 6499;
 
     private class ClientThread implements Runnable {
@@ -63,8 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
                 // Send to the server any changes!
                 try {
-                    PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
-                    out.println(s.toString());
+                    if (s.length() > 0) {
+                        PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
+                        out.println(s.toString());
+                    }
                 } catch (UnknownHostException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
